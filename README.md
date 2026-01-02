@@ -23,6 +23,7 @@
 ## 📋 Tabla de Contenidos
 
 - [📋 Descripción del Proyecto](#-descripción-del-proyecto)
+- [📸 Screenshots](#-screenshots)
 - [✨ Características Implementadas](#-características-implementadas)
 - [🛠️ Stack Tecnológico](#️-stack-tecnológico)
 - [🏗️ Arquitectura](#️-arquitectura)
@@ -54,6 +55,31 @@ Este proyecto demuestra la capacidad de:
 | 🎨 **UI/UX** | Interfaces intuitivas y responsivas (próximamente) |
 
 ---
+
+## 📸 Screenshots
+
+<div align="center">
+
+### 📂 Página de Categorías
+*Gestión de categorías: listado y creación*
+
+<img src="./src/docs/pages_categories.jpg" alt="Página de Categorías" width="700"/>
+
+---
+
+### ✍️ Página de Autores
+*Gestión de autores: listado y creación*
+
+<img src="./src/docs/pages_autores.jpg" alt="Página de Autores" width="700"/>
+
+---
+
+### 📖 Página de Libros
+*Gestión de libros con selección de autor y categoría*
+
+<img src="./src/docs/pages_libros.jpg" alt="Página de Libros" width="700"/>
+
+</div>
 
 ## ✨ Características Implementadas
 
