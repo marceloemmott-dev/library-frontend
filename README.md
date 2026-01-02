@@ -71,6 +71,14 @@ Este proyecto demuestra la capacidad de:
 - [x] Manejo y visualización de errores
 - [x] Actualización automática de la lista tras crear
 
+### ✅ Módulo de Libros
+- [x] Listar todos los libros con autor y categoría
+- [x] Crear nuevos libros con selección de autor y categoría
+- [x] Formulario con selects dinámicos
+- [x] Manejo de estados de carga (loading)
+- [x] Manejo y visualización de errores
+- [x] Actualización automática de la lista tras crear
+
 ### ✅ Navegación
 - [x] Sistema de navegación entre páginas
 - [x] Botones de navegación con estado activo
@@ -78,7 +86,7 @@ Este proyecto demuestra la capacidad de:
 ### 🔜 Próximas Funcionalidades
 - [ ] CRUD completo de categorías (editar, eliminar)
 - [ ] CRUD completo de autores (editar, eliminar)
-- [ ] Módulo de Libros
+- [ ] CRUD completo de libros (editar, eliminar)
 - [ ] Autenticación de usuarios (JWT)
 - [ ] Panel de administración
 - [ ] Estilos con Tailwind CSS
@@ -183,6 +191,7 @@ El proyecto sigue una **arquitectura modular** con separación clara de responsa
 │   │   ├── config.ts            # Configuración (URL base)
 │   │   ├── categories.ts        # Funciones CRUD de categorías
 │   │   ├── authors.ts           # Funciones CRUD de autores
+│   │   ├── books.ts             # Funciones CRUD de libros
 │   │   └── types.ts             # Tipos TypeScript compartidos
 │   │
 │   ├── 📂 components            # 🧩 Componentes reutilizables
@@ -190,7 +199,8 @@ El proyecto sigue una **arquitectura modular** con separación clara de responsa
 │   │
 │   ├── 📂 pages                 # 📄 Páginas de la aplicación
 │   │   ├── CategoriesPage.tsx   # Página de categorías
-│   │   └── AuthorsPage.tsx      # Página de autores
+│   │   ├── AuthorsPage.tsx      # Página de autores
+│   │   └── BooksPage.tsx        # Página de libros
 │   │
 │   ├── App.tsx                  # Componente raíz + navegación
 │   ├── main.tsx                 # Punto de entrada React
@@ -332,6 +342,15 @@ Este frontend está diseñado para funcionar con [Library Backend API](https://g
 | `GET` | `/authors/:id` | Obtener autor por ID | 🔜 |
 | `PATCH` | `/authors/:id` | Actualizar autor | 🔜 |
 | `DELETE` | `/authors/:id` | Eliminar autor | 🔜 |
+
+#### 📖 Libros
+| Método | Endpoint | Descripción | Estado |
+|--------|----------|-------------|--------|
+| `GET` | `/books` | Obtener todos los libros | ✅ |
+| `POST` | `/books` | Crear nuevo libro | ✅ |
+| `GET` | `/books/:id` | Obtener libro por ID | 🔜 |
+| `PATCH` | `/books/:id` | Actualizar libro | 🔜 |
+| `DELETE` | `/books/:id` | Eliminar libro | 🔜 |
 
 ### Ejemplo de Respuesta API
 
