@@ -1,9 +1,7 @@
+import { CategoriesPage } from './pages/CategoriesPage';
+
 function App() {
-  return (
-    <>
-      <div className="App">hola mundo</div>
-    </>
-  );
+  return <CategoriesPage />;
 }
 
 export default App;
