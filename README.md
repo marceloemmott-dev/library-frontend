@@ -64,10 +64,21 @@ Este proyecto demuestra la capacidad de:
 - [x] Manejo y visualización de errores
 - [x] Actualización automática de la lista tras crear
 
+### ✅ Módulo de Autores
+- [x] Listar todos los autores desde la API
+- [x] Crear nuevos autores
+- [x] Manejo de estados de carga (loading)
+- [x] Manejo y visualización de errores
+- [x] Actualización automática de la lista tras crear
+
+### ✅ Navegación
+- [x] Sistema de navegación entre páginas
+- [x] Botones de navegación con estado activo
+
 ### 🔜 Próximas Funcionalidades
 - [ ] CRUD completo de categorías (editar, eliminar)
+- [ ] CRUD completo de autores (editar, eliminar)
 - [ ] Módulo de Libros
-- [ ] Módulo de Autores
 - [ ] Autenticación de usuarios (JWT)
 - [ ] Panel de administración
 - [ ] Estilos con Tailwind CSS
@@ -171,15 +182,17 @@ El proyecto sigue una **arquitectura modular** con separación clara de responsa
 │   ├── 📂 api                   # 🔌 Capa de servicios API
 │   │   ├── config.ts            # Configuración (URL base)
 │   │   ├── categories.ts        # Funciones CRUD de categorías
+│   │   ├── authors.ts           # Funciones CRUD de autores
 │   │   └── types.ts             # Tipos TypeScript compartidos
 │   │
 │   ├── 📂 components            # 🧩 Componentes reutilizables
 │   │   └── (próximamente)
 │   │
 │   ├── 📂 pages                 # 📄 Páginas de la aplicación
-│   │   └── CategoriesPage.tsx   # Página de categorías
+│   │   ├── CategoriesPage.tsx   # Página de categorías
+│   │   └── AuthorsPage.tsx      # Página de autores
 │   │
-│   ├── App.tsx                  # Componente raíz
+│   ├── App.tsx                  # Componente raíz + navegación
 │   ├── main.tsx                 # Punto de entrada React
 │   └── index.css                # Estilos globales
 │
@@ -302,6 +315,7 @@ Este frontend está diseñado para funcionar con [Library Backend API](https://g
 
 ### Endpoints Consumidos Actualmente
 
+#### 📂 Categorías
 | Método | Endpoint | Descripción | Estado |
 |--------|----------|-------------|--------|
 | `GET` | `/categories` | Obtener todas las categorías | ✅ |
@@ -309,6 +323,15 @@ Este frontend está diseñado para funcionar con [Library Backend API](https://g
 | `GET` | `/categories/:id` | Obtener categoría por ID | 🔜 |
 | `PATCH` | `/categories/:id` | Actualizar categoría | 🔜 |
 | `DELETE` | `/categories/:id` | Eliminar categoría | 🔜 |
+
+#### ✍️ Autores
+| Método | Endpoint | Descripción | Estado |
+|--------|----------|-------------|--------|
+| `GET` | `/authors` | Obtener todos los autores | ✅ |
+| `POST` | `/authors` | Crear nuevo autor | ✅ |
+| `GET` | `/authors/:id` | Obtener autor por ID | 🔜 |
+| `PATCH` | `/authors/:id` | Actualizar autor | 🔜 |
+| `DELETE` | `/authors/:id` | Eliminar autor | 🔜 |
 
 ### Ejemplo de Respuesta API
 

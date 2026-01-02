@@ -3,6 +3,11 @@ export type Category = {
   name: string;
 };
 
+export type Author = {
+  id: number;
+  name: string;
+};
+
 export type ApiListResponse<T> = {
   message: string;
   data: T[];
