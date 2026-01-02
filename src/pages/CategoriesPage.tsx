@@ -1,19 +1,19 @@
-import { useEffect, useState } from 'react';
-import { getCategories, createCategory } from '../api/categories';
-import type { Category } from '../api/types';
+import { useEffect, useState } from "react";
+import { getCategories, createCategory } from "../api/categories";
+import type { Category } from "../api/types";
 
 export function CategoriesPage() {
   const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
   const [creating, setCreating] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [name, setName] = useState('');
+  const [name, setName] = useState("");
 
   const load = () => {
     setLoading(true);
     getCategories()
       .then((res) => setCategories(res.data))
-      .catch(() => setError('No se pudieron cargar las categorías'))
+      .catch(() => setError("No se pudieron cargar las categorías"))
       .finally(() => setLoading(false));
   };
 
@@ -29,7 +29,7 @@ export function CategoriesPage() {
       setCreating(true);
       setError(null);
       await createCategory(name.trim());
-      setName('');
+      setName("");
       load(); // 🔄 refresca la lista
     } catch (err: any) {
       setError(err.message);
@@ -44,18 +44,33 @@ export function CategoriesPage() {
     <div>
       <h1>Categorías</h1>
 
-      <form onSubmit={onSubmit} style={{ marginBottom: 16 }}>
+      <form
+        onSubmit={onSubmit}
+        style={{
+          marginBottom: 16,
+          display: "flex",
+          gap: 8,
+          alignItems: "center",
+        }}
+      >
+        <label htmlFor="category-name" style={{ fontWeight: 500 }}>
+          Nueva categoría:
+        </label>
         <input
+          id="category-name"
+          name="categoryName"
+          type="text"
+          autoComplete="off"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          placeholder="Nueva categoría"
+          placeholder="Ej: Ficción, Ciencia..."
         />
         <button type="submit" disabled={creating}>
-          {creating ? 'Creando...' : 'Crear'}
+          {creating ? "Creando..." : "Crear"}
         </button>
       </form>
 
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+      {error && <p style={{ color: "red" }}>{error}</p>}
 
       {categories.length === 0 ? (
         <p>No existen categorías</p>

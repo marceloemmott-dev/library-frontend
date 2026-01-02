@@ -44,11 +44,26 @@ export function AuthorsPage() {
     <div>
       <h1>✍️ Autores</h1>
 
-      <form onSubmit={onSubmit} style={{ marginBottom: 16 }}>
+      <form
+        onSubmit={onSubmit}
+        style={{
+          marginBottom: 16,
+          display: "flex",
+          gap: 8,
+          alignItems: "center",
+        }}
+      >
+        <label htmlFor="author-name" style={{ fontWeight: 500 }}>
+          Nombre del autor:
+        </label>
         <input
+          id="author-name"
+          name="authorName"
+          type="text"
+          autoComplete="off"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          placeholder="Nombre del autor"
+          placeholder="Ej: Gabriel García Márquez..."
         />
         <button type="submit" disabled={creating}>
           {creating ? "Creando..." : "Crear"}
